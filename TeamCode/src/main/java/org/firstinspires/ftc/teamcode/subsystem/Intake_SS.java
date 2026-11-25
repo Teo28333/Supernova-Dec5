@@ -99,6 +99,4 @@ public class Intake_SS {
         secondMotorPow = 0.0;
     }
 
-
 }
-
