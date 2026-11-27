@@ -22,6 +22,7 @@ public class Shooter_SS {
 
     public void read() {
         //TODO add sensor read
+        currentSpeed = motor1.getVelocity()
     }
 
     public void write() {
