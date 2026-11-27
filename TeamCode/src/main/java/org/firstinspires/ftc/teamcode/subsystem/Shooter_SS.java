@@ -11,8 +11,6 @@ public class Shooter_SS {
     private final Servo servo;
     private final Telemetry telemetry;
 
-
-    private double targetSpeed = 0.0;
     private double currentSpeed = 0.0;
 
     public Shooter_SS(HardwareMap hwm, Telemetry telemetry, String motor1Name, String servoName) {
@@ -20,5 +18,25 @@ public class Shooter_SS {
         this.telemetry = telemetry;
         motor1 = hwm.get(DcMotorEx.class, motor1Name);
         servo = hwm.get(Servo.class, servoName);
+    }
+
+    public void read() {
+        //TODO add sensor read
+    }
+
+    public void write() {
+        //TODO add motor writing
+    }
+
+    public void update() {
+        //TODO add teleop logic
+    }
+
+    public double getTargetSpeed() {
+        return;
+    }
+
+    public double getCurrentSpeed() {
+        return currentSpeed;
     }
 }

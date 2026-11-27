@@ -67,7 +67,7 @@ public class Intake_SS {
         isIntaking = true;
         isTransferring = false;
         isOuttaking = false;
-        gate.setPosition(closeGatePos);
+        gatePos = closeGatePos;
         firstMotorPow = 1.0;
         secondMotorPow = 0.5;
     }
@@ -76,16 +76,16 @@ public class Intake_SS {
         isIntaking = false;
         isTransferring = false;
         isOuttaking = true;
-        gate.setPosition(closeGatePos);
+        gatePos = openGatePose;
         firstMotorPow = -1.0;
         secondMotorPow = -1.0;
     }
 
     public void transferCMD() {
-        isIntaking = true;
+        isIntaking = false;
         isTransferring = true;
         isOuttaking = false;
-        gate.setPosition(openGatePose);
+        gatePos = openGatePose;
         firstMotorPow = 1.0;
         secondMotorPow = 1.0;
     }
@@ -94,7 +94,6 @@ public class Intake_SS {
         isIntaking = false;
         isTransferring = false;
         isOuttaking = false;
-        gate.setPosition(closeGatePos);
         firstMotorPow = 0.0;
         secondMotorPow = 0.0;
     }
