@@ -5,6 +5,18 @@ This repository contains the public FTC SDK for the BIOBUZZ (2026-2027) competit
 ## Welcome!
 This GitHub repository contains the source code that is used to build an Android app to control a *FIRST* Tech Challenge competition robot.  To use this SDK, download/clone the entire project to your local computer.
 
+## Development Tools
+
+TeamCode includes [Panels 1.0.20](https://panels.bylazar.com/docs/com.bylazar.fullpanels/) and [Sloth 0.3.2](https://github.com/Dairy-Foundation/Sloth#installation).
+
+1. Sync Gradle, connect the robot through ADB, then run **TeamCode (Full Install)** in Android Studio for the initial installation. This configuration removes old Sloth uploads before building and installing the app.
+2. For later changes under `org.firstinspires.ftc.teamcode`, run **Deploy Sloth** (`:TeamCode:deploySloth`). Sloth applies the update after the current OpMode ends.
+3. Use **TeamCode (Full Install)** again after changing dependencies, resources, files outside TeamCode's package, or `@Pinned` annotations.
+
+Connect your computer to the robot's Wi-Fi and open [Panels on a Control Hub](http://192.168.43.1:8001), or [Panels on a phone RC](http://192.168.49.1:8001). See the [Panels setup guide](https://panels.bylazar.com/docs/com.bylazar.docs/Prerequisites/) and [dashboard access instructions](https://panels.bylazar.com/docs/com.bylazar.docs/Accessing%20Panels/).
+
+Robot deployment, dashboard access, and hot reload still need verification on hardware.
+
 ## Requirements
 To use this Android Studio project, you will need Android Studio Narwhal 3 Feature Drop or later.
 
