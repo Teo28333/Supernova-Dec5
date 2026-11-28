@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode.opmode.auto;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.math.Pose;
 import com.pedropathing.paths.Path;
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -12,8 +11,7 @@ import org.firstinspires.ftc.teamcode.pedro.Constants;
 import org.firstinspires.ftc.teamcode.subsystem.Intake_SS;
 import org.firstinspires.ftc.teamcode.subsystem.Shooter_SS;
 
-@Autonomous(name = "AutoDaniel", group = "Examples")
-public class AutoDaniel extends OpMode {
+public abstract class AutoDaniel extends OpMode {
     private static final int START = 0;
     private static final int PICKUP_FIRST = 1;
     private static final int MOVE_TO_SHOT = 2;
@@ -29,9 +27,14 @@ public class AutoDaniel extends OpMode {
     private int pathState;
     private boolean stateStarted;
 
+    /** Select the mirrored field side before FTC calls init(). */
+    protected boolean isMirrored() {
+        return false;
+    }
+
     @Override
     public void init() {
-        paths = new AutoPath();
+        paths = new AutoPath(isMirrored());
         follower = Constants.create(hardwareMap);
         intake = new Intake_SS(
                 hardwareMap.get(DcMotorEx.class, "intake1"),
