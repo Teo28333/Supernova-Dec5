@@ -55,7 +55,8 @@ public class TestTeleOp extends OpMode {
         }
 
 
-        shooter_ss.update();
+        Pose shooterPose = follower.pose();
+        shooter_ss.update(shooterPose.x(), shooterPose.y(), shooterPose.heading());
         follower.update();
 
         Pose robotPose = follower.pose(); // returns a Pose object
