@@ -51,6 +51,8 @@ public class Shooter_SS {
 
     public void update(double x, double y, double heading) {
         //TODO add teleop logic
+        read();
+        write();
         targetSpeed = shooterEquations.targetSpeedLut(distance);
         motorPow = pidfController.calculate(targetSpeed, currentSpeed);
     }
